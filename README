@@ -1,0 +1,36 @@
+* History
+
+This source code is from [[https://github.com/tiagoweber][tiagoweber]].
+
+- The first version is from [[http://tiagoweber.github.io/blog/entry1.html][here]].
+- The second version is from [[http://tiagoweber.github.io/blog/entry4.html][here]].
+
+* Usage
+
+** Example
+
+#+BEGIN_SRC org
+,#+BEGIN_SRC spice  :results drawer :exports both :var file="data/images/spice-example"
+,*Virtual Ground Test: opamp gain = 1000
+vin in 0 dc 0V sin(0 0.1 100Hz)
+r1 in inn 10k
+r2 inn out 10k
+EOpamp out 0 0 inn 1000
+.tran 0.1ms 0.05s
+.print tran v(in)
+.meas tran vtest find v(in) at=0.04e-3
+.end
+.control
+run
+set gnuplot_terminal=png
+gnuplot $file v(in) v(out) v(inn)
+.endc
+,#+END_SRC
+
+,#+RESULTS:
+:RESULTS:
+,#+ATTR_HTML: :width 600px
+ [[file:./data/images/spice-example.png]]
+:END:
+
+#+END_SRC
