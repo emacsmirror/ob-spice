@@ -1,15 +1,19 @@
 ;;; ob-spice.el --- org-babel functions for spice evaluation
+;;; -*- coding: utf-8 -*-
 
 ;; Author: Tiago Oliveira Weber
 ;; Version: 0.4
-;; 2016
+;; Package-Requires: ((spice-mode "0.0.1") (org "8"))
 ;; Homepage: http://tiagoweber.github.io
+
+;;; Commentary:
 
 ;; Org-Babel support for evaluating spice script.
 ;; Inspired by Ian Yang's org-export-blocks-format-plantuml (http://www.emacswiki.org/emacs/org-export-blocks-format-plantuml.el)
 
 ;;; Requirements:
-;; ngspice
+;;
+;; - ngspice
 
 ;;; Code:
 (require 'ob)
