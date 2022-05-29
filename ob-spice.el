@@ -47,7 +47,9 @@
 
 (defun org-babel-expand-body:spice (body params)
   "Expand BODY according to PARAMS, return the expanded body."
-  (let* ((vars (mapcar #'cdr (org-babel-get-header params :var))))
+  (let* ((vars (mapcar #'cdr (if (fboundp 'org-babel--get-vars)
+                                 (org-babel--get-vars params)
+                               (org-babel-get-header params :var)))))
     (setq newbody "");
     (setq bodylinelist (split-string body "\n"))
     (dolist (line bodylinelist newbody)
@@ -123,7 +125,9 @@
 (defun org-babel-execute:spice (body params)
   "Execute a block of Spice code `BODY' with org-babel and `PARAMS'."
   (let ((body (org-babel-expand-body:spice body params))
-        (vars (mapcar #'cdr (org-babel-get-header params :var))))
+        (vars (mapcar #'cdr (if (fboundp 'org-babel--get-vars)
+                                (org-babel--get-vars params)
+                              (org-babel-get-header params :var)))))
 
     ;;******************************
     ;; clean temporary files
