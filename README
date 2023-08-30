@@ -1,13 +1,11 @@
 * History
 
-This source code is from [[https://github.com/tiagoweber][tiagoweber]].
+ob-spice is now being maintained at https://repo.or.cz/ob-spice.
 
-- The first version is from [[http://tiagoweber.github.io/blog/entry1.html][here]].
-- The second version is from [[http://tiagoweber.github.io/blog/entry4.html][here]].
-
-* Project status
-
-I put it in Org-mode contrib/ now.
+This package was originally written by [[https://github.com/tiagoweber][Tiago Weber]].
+You can find more (potentially outdated) information by him about
+this package [[http://tiagoweber.github.io/blog/entry1.html][here]]
+and [[http://tiagoweber.github.io/blog/entry4.html][here]].
 
 * Usage
 
